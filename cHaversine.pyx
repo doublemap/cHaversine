@@ -1,5 +1,4 @@
 from libc.math cimport sin, cos, acos
-import math
 
 
 def haversine(tuple coord1, tuple coord2):
