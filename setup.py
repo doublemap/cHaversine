@@ -4,7 +4,7 @@ from Cython.Build import cythonize
 setup(
     name = 'cHaversine',
     packages = ['cHaversine'],
-    version = '0.1.0',
+    version = '0.1.1',
     description = 'Fast haversine calculation',
     author = 'Eric Jiang',
     author_email = 'eric@doublemap.com',
