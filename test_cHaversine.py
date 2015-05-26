@@ -22,6 +22,10 @@ class TestCHaversine(unittest.TestCase):
         known_dist = 16090 * 1000
         self.assertTrue(abs(dist - known_dist) < 5000)
 
+    def test_0_to_1(self):
+        dist = haversine((0, 0), (1, 1))
+        known_dist = 156900
+        self.assertTrue(abs(dist - known_dist) < 1000)
 
 if __name__ == '__main__':
     unittest.main()

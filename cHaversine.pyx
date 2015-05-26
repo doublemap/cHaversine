@@ -11,8 +11,6 @@ def haversine(tuple coord1, tuple coord2):
     cdef float lng2
     lat1, lng1 = coord1
     lat2, lng2 = coord2
-    if not (lat1 and lng1 and lat2 and lng2):
-        return None
 
     cdef float ph1
     cdef float ph2
