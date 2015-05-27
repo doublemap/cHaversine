@@ -27,5 +27,12 @@ class TestCHaversine(unittest.TestCase):
         known_dist = 156900
         self.assertTrue(abs(dist - known_dist) < 1000)
 
+    def test_small_distance(self):
+        # floats will store these two coordinates as the same value, resulting
+        # in dist = 0.
+        # doubles are able to distinguish these two points.
+        dist = haversine((39, -88.97223382), (39, -88.972237))
+        self.assertTrue(dist > 0)
+
 if __name__ == '__main__':
     unittest.main()

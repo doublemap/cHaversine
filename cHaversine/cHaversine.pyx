@@ -4,19 +4,19 @@ from libc.math cimport sin, cos, acos
 def haversine(tuple coord1, tuple coord2):
     """Given two (lat, lng) tuples, returns the distance between them in
     meters."""
-    cdef float lat1
-    cdef float lng1
-    cdef float lat2
-    cdef float lng2
+    cdef double lat1
+    cdef double lng1
+    cdef double lat2
+    cdef double lng2
     lat1, lng1 = coord1
     lat2, lng2 = coord2
 
-    cdef float ph1
-    cdef float ph2
-    cdef float theta1
-    cdef float theta2
-    cdef float c
-    cdef float arc
+    cdef double ph1
+    cdef double ph2
+    cdef double theta1
+    cdef double theta2
+    cdef double c
+    cdef double arc
 
     phi1 = (90.0 - lat1) * 0.0174532925
     phi2 = (90.0 - lat2) * 0.0174532925

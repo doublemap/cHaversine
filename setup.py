@@ -4,7 +4,7 @@ from setuptools import Extension
 setup(
     name = 'cHaversine',
     packages = ['cHaversine'],
-    version = '0.1.5',
+    version = '0.2.0',
     description = 'Fast haversine calculation',
     author = 'Eric Jiang',
     author_email = 'eric@doublemap.com',
