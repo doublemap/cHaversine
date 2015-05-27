@@ -3,3 +3,6 @@ cHaversine.so: cHaversine/cHaversine.c
 
 cHaversine/cHaversine.c: cHaversine/cHaversine.pyx
 	cython $<
+
+clean:
+	rm -f cHaversine/cHaversine.c cHaversine.*.so cHaversine.egg-info
