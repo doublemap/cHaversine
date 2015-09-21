@@ -1,4 +1,5 @@
 from __future__ import print_function
+import math
 from cHaversine import haversine
 import unittest
 
@@ -33,6 +34,11 @@ class TestCHaversine(unittest.TestCase):
         # doubles are able to distinguish these two points.
         dist = haversine((39, -88.97223382), (39, -88.972237))
         self.assertTrue(dist > 0)
+
+    def test_same_coords(self):
+        # distance between a coord and itself should not be NaN
+        dist = haversine((39.11, -86.7), (39.11, -86.7))
+        self.assertFalse(math.isnan(dist))
 
 if __name__ == '__main__':
     unittest.main()
