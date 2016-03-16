@@ -1,4 +1,4 @@
-from libc.math cimport sin, cos, acos
+from libc.math cimport sin, cos, asin, sqrt
 
 
 def haversine(tuple coord1, tuple coord2):
@@ -25,11 +25,16 @@ def haversine(tuple coord1, tuple coord2):
     cdef double c
     cdef double arc
 
-    phi1 = (90.0 - lat1) * 0.0174532925
-    phi2 = (90.0 - lat2) * 0.0174532925
+    phi1 = (lat1) * 0.0174532925
+    phi2 = (lat2) * 0.0174532925
     theta1 = lng1 * 0.0174532925
     theta2 = lng2 * 0.0174532925
 
-    c = (sin(phi1) * sin(phi2) * cos(theta1 - theta2) + cos(phi1) * cos(phi2))
-    arc = acos(c)
+    dphi = phi2 - phi1
+    dtheta = theta2 - theta1
+
+    a = sin(dphi/2)**2 + cos(phi1) * cos(phi2) * sin(dtheta/2)**2
+
+    arc = 2 * asin(sqrt(a))
+
     return arc * 6367444.7

@@ -40,5 +40,9 @@ class TestCHaversine(unittest.TestCase):
         dist = haversine((39.11, -86.7), (39.11, -86.7))
         self.assertFalse(math.isnan(dist))
 
+    def test_very_small_distance(self):
+        dist = haversine((39.8862855,-86.0395778),(39.8862855,-86.0395777))
+        self.assertFalse(math.isnan(dist))
+
 if __name__ == '__main__':
     unittest.main()
