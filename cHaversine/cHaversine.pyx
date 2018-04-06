@@ -12,7 +12,7 @@ def haversine(tuple coord1, tuple coord2):
     lat2, lng2 = coord2
 
     if lat1 == lat2 and lng1 == lng2:
-        return 0
+        return 0.0
     if lat1 > 90 or lat1 < -90 or lat2 > 90 or lat2 < -90:
         raise ValueError("Invalid latitude (should be between +/- 90)")
     if lng1 > 180 or lng1 < -180 or lng2 > 180 or lng2 < -180:
